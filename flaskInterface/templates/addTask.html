@@ -1,0 +1,93 @@
+{% extends 'index.html' %}
+
+{%block content%}
+{% include 'nav.html' %}
+      <div class="domain_layout">
+        <div class="container">
+
+         <!-- <div class="position-relative">
+            <img src="{{ url_for('static' , filename = 'img/ai.jpg' )}}" class="mx-auto d-block domain_img w-100" />
+            <div class="position-absolute w-100 mx-auto d-block top-0">
+              <h1 class="text-white text-center mt-5 pt-5 fw-bolder">Automation AI</h1>
+              <p class="text-secondary text-center fs-2 fw-bold mt-5 mx-3">Providing plenty of benefits to our day-to-day lives. In the current state of the world, and with today's existing technology</p>
+            </div>
+          </div>-->
+
+         <!-- <div class="row mb-8">
+            <div class="d-flex justify-content-start mb-4">
+                <div class="p-1 mt-3">
+                <h1 class="header_intro ">AI Microservice </h1>
+                <p class="pt-3 text-black lh-lg">A General Purpose Intelligent System </p>                    
+                </div>
+            </div>
+         </div> -->
+
+          <section class="bg-white mx-5 domain_page">
+            <div class="pt-5 px-5">
+              <h2 class="fs-2 fw-bolder text-primary">Process Task</h2>
+              <p class="fs-6 text-black">Proceed to process a new Task</p>
+            </div>
+            <form enctype="multipart/form-data" method="POST" class="p-3">
+             {{form.hidden_tag()}}
+
+              <div class="row mb-3">
+                
+                <div class="col-md-6 col-sm-12">
+                  {{form.Ms_name.label(class='form-label fw-bolder')}}
+                  {{form.Ms_name(class='form-control')}}
+                </div>
+                
+                <div class="col-md-6 col-sm-12">
+                  {{form.NameSpace.label(class='form-label fw-bolder')}}
+                  {{form.NameSpace(class='form-control')}}
+                </div>
+
+              </div>
+
+              <div class="row mb-3">
+
+                <div class="col-md-6 col-sm-12">
+                  {{form.domain.label(class='form-label fw-bolder')}}
+                  {{form.domain(class='form-control')}}
+                </div>
+
+                <div class="col-md-6 col-sm-12">                
+                  {{form.fileInput.label(class='form-label fw-bolder')}}
+                  {{form.fileInput(class='form-control')}}
+                </div>
+
+                <div class="col-md-6 col-sm-12">                
+                  {{form.efileInput.label(class='form-label fw-bolder')}}
+                  {{form.efileInput(class='form-control')}}
+                </div>
+                
+
+              </div>
+
+              <div class="row mb-3">
+
+                <div class="col-md-6 col-sm-12">                
+                  {{form.desired_output.label(class='form-label fw-bolder')}}
+                  {{form.desired_output(class='form-control')}}
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                  {{form.purpose.label(class='form-label fw-bolder')}}
+                  {{form.purpose(class='form-control')}} 
+                </div>
+
+              </div>
+             
+              
+              {{ form.submit(class=' rounded mt-4 my-4 my-btn' )}}
+
+              {% for message in messages%}
+              <p class='mt-4 bg-green'> {{message}} </p>
+
+              {%endfor%}
+            </form>
+          </section>
+        </div>
+      </div>
+      
+{% endblock content %}

@@ -1,0 +1,25 @@
+@prefix ns1: <http://mymicroservice.uk.ng.abu.dauda/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:something_special_kinikan_kinikan a ns1:datacleaning_brushing_and_bafint ;
+    ns1:category ns1:1 ;
+    ns1:contributor <enininak_lokan>,
+        <file:///home/darkmode/Downloads/Compressed/myproject-main/flaskInterface/components/enininak_lokan> ;
+    ns1:dependency "nunmpy"@en,
+        "pandas"@en,
+        "sklearn"@en ;
+    ns1:description "e go sha do something"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:3 ;
+                    ns1:pid "0"@en ] ],
+        [ ns1:paramter [ ns1:iocategory ns1:3 ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:1 ;
+                    ns1:pid "0"@en ] ],
+        [ ns1:paramter [ ns1:iocategory ns1:1 ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:pipe 0 ;
+    ns1:uri ns1:something_special_kinikan_kinikan .
+

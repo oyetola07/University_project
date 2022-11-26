@@ -1,0 +1,61 @@
+
+<!-- 
+<nav class="navbar navbar-expand-lg nav text-white text-bg">
+    <div class="container">
+      <a class="navbar-brand fs-3 fw-bolder text-white" href="#">AI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-5">
+          
+          
+        </div>
+        <div class="navbar-nav ml-5">
+            {% if current_user.is_active%}
+              <div>{{current_user.username}}</div>
+            {%endif%}
+    
+        <a class="nav-link active pt-3" aria-current="page" href="{{url_for ('Home') }}">Home</a>
+        <a class="nav-link text-white ms-4" href="{{ url_for('Login') }}"><button class="btn btn-primary text-white">LOGIN</button></a>
+        
+
+       </div>
+      </div>
+
+
+    </div>
+  </nav> -->
+
+<div class="navbar navbar-expand-lg nav  outernav bg-primary">
+  <div class="logo">
+    <a href="{{url_for('Home')}}">AI Microservice Agent</a>
+  </div>
+
+  <nav class="navigation ml-4">
+    <ul class="unordered">
+      
+
+      
+      {% if current_user.is_authenticated%}
+
+      <li><a href="{{url_for('Task')}}">Add Task</a></li>
+      <li><a href="{{url_for('Dom')}}">Add Domain</a></li>
+      <li><a href="{{url_for('Servicereg')}}"">Register Service </a></li>
+      <li><a href="{{url_for('logout')}}">Logout</a></li>
+      <li class="user_panel">Logged in as :( {{current_user.username}} )</li>
+
+      
+      {%else%}
+      <li><a href="{{url_for('Home')}}">Home</a></li>
+      <li><a href="{{url_for('Login')}}">Login</a></li>
+      <li><a href="{{url_for('register')}}">Register</a></li>
+
+      {%endif%}
+
+
+    
+    </ul>
+
+  </nav>
+</div>

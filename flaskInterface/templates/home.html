@@ -1,0 +1,26 @@
+
+{% extends 'index.html' %}
+
+{% block content%}
+{%include 'nav.html'%}
+      <div class="main_container container-fluid">
+        <div class="row">
+
+         
+
+          <div class="col-md-6 col-sm-12 p-5">
+            <div class="p-5 mt-3">
+              <h1 class="header_intro ">AI Microservices Agent </h1>
+              <p class="pt-3 text-black lh-lg">A General Purpose Intelligent System </p>
+              <a href="{{url_for('Servicereg')}}" class="text-white  fw-bolder text-decoration-none"><button class="my-btn p-2 rounded fw-bolder mt-3">Explore</button></a>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-12">  
+            <img src="{{ url_for('static' , filename = 'img/Working_remotely.png') }}"  width="90%"/>
+          </div>
+         
+        </div>
+      </div>
+       
+    {% endblock content %}

@@ -1,0 +1,4 @@
+1. Navigate to this directory  in my the terminal.
+2. run the command pip install -r requirments.txt
+3. wait for it to install all the needed dependencies .
+4. once complete  , run python run.py

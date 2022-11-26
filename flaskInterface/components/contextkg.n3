@@ -1,0 +1,114 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:051edcae-6f60-4f01-ba21-0f7dca12a23b a ns1:task ;
+    ns1:context ns1:56105583-185c-4b49-87c7-23588fcb86e4 ;
+    ns1:desire_output [ ns1:iodatatype ns1:pipeline ] ;
+    ns1:domain "medical"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] .
+
+ns1:18be2551-a8a7-474b-b0c8-649bbdb01c9e a ns1:task ;
+    ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain "1"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_934aa9e6> ] .
+
+ns1:1e938d7a-fa2c-4a00-832f-fac40b47b92c a ns1:task ;
+    ns1:context ns1:c1173312-c39a-480e-8b8e-550854a44cd8 ;
+    ns1:desire_output [ ns1:iodatatype ns1:1 ] ;
+    ns1:domain "1"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_25535d21> ] .
+
+ns1:36e4cf2e-5415-4093-b6af-9278d2681737 a ns1:task ;
+    ns1:context ns1:845141ef-80c9-4f84-84ab-d2c7914df071 ;
+    ns1:desire_output [ ns1:iodatatype ns1:txt ] ;
+    ns1:input [ ns1:iodatatype ns1:txt ] .
+
+ns1:430b1b86-ee97-4fd9-a934-12182e8015b8 a ns1:task ;
+    ns1:context ns1:e87d835c-fcc1-4b12-aee6-5e59bf986898 ;
+    ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain "1"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_c8da153e> ] .
+
+ns1:4685f6f2-ec98-4b5b-a99f-705445df7483 a ns1:task ;
+    ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain "1"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_9a5c4ffb> ] .
+
+ns1:5c31cf2a-7104-4094-b627-abd3bb370e53 a ns1:task ;
+    ns1:context ns1:b0969356-79a1-4ea5-aa7d-1dd5606a08d6 ;
+    ns1:desire_output [ ns1:iodatatype ns1:txt ] ;
+    ns1:input [ ns1:iodatatype ns1:txt ] .
+
+ns1:62f8162d-1e58-4f90-ada1-82dd359c640e a ns1:task ;
+    ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain "1"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_5cd1d20d> ] .
+
+ns1:77f3c448-e9bb-40ac-847b-94f3ea0d4eef a ns1:task ;
+    ns1:context ns1:c9f60c05-40af-4068-8657-176de28121ee ;
+    ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain "Medical"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_d48a87a8> ] .
+
+ns1:8ee7ab72-5912-4a4f-9ded-6b445be3ad9b a ns1:task ;
+    ns1:context ns1:7168f2a5-e5e3-4314-8feb-35ea3d2809df ;
+    ns1:desire_output [ ns1:iodatatype ns1:txt ] ;
+    ns1:input [ ns1:iodatatype ns1:jpeg ] .
+
+ns1:cf595932-8846-462e-ad08-3d984abae6ba a ns1:task ;
+    ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain "1"@en ;
+    ns1:input [ ns1:iodatatype <http://aimicroservice.derby.ac.uk//flaskInterface/storage/files/tmdb-movies_97debb6b> ] .
+
+ns1:56105583-185c-4b49-87c7-23588fcb86e4 ns1:desire_output [ ns1:iodatatype ns1:pipeline ] ;
+    ns1:domain ns1:medical ;
+    ns1:input_data ns1:heart ;
+    ns1:purpose ns1:MLmodel_classification .
+
+ns1:7168f2a5-e5e3-4314-8feb-35ea3d2809df ns1:desire_output [ ns1:iodatatype ns1:txt ] ;
+    ns1:input_data ns1:image .
+
+ns1:845141ef-80c9-4f84-84ab-d2c7914df071 ns1:desire_output [ ns1:iodatatype ns1:txt ] ;
+    ns1:input_data ns1:text .
+
+ns1:b0969356-79a1-4ea5-aa7d-1dd5606a08d6 ns1:desire_output [ ns1:iodatatype ns1:txt ] ;
+    ns1:input_data ns1:text .
+
+ns1:c1173312-c39a-480e-8b8e-550854a44cd8 ns1:desire_output [ ns1:iodatatype ns1:1 ] ;
+    ns1:domain ns1:1 ;
+    ns1:input_data ns1: ;
+    ns1:purpose ns1:MLmodel_classification .
+
+ns1:c9f60c05-40af-4068-8657-176de28121ee ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain ns1:Medical ;
+    ns1:input_data ns1: ;
+    ns1:purpose ns1:MLmodel_classification .
+
+ns1:e87d835c-fcc1-4b12-aee6-5e59bf986898 ns1:desire_output [ ns1:iodatatype ns1:3 ] ;
+    ns1:domain ns1:1 ;
+    ns1:input_data ns1: ;
+    ns1:purpose ns1:MLmodel_classification .
+
+ns1:heart ns1:data_type ns1:csv ;
+    ns1:feature_number "14"@en ;
+    ns1:feature_type <http://aimicroservice.derby.ac.uk/feature/age>,
+        <http://aimicroservice.derby.ac.uk/feature/ca>,
+        <http://aimicroservice.derby.ac.uk/feature/chol>,
+        <http://aimicroservice.derby.ac.uk/feature/cp>,
+        <http://aimicroservice.derby.ac.uk/feature/exang>,
+        <http://aimicroservice.derby.ac.uk/feature/fbs>,
+        <http://aimicroservice.derby.ac.uk/feature/oldpeak>,
+        <http://aimicroservice.derby.ac.uk/feature/restecg>,
+        <http://aimicroservice.derby.ac.uk/feature/sex>,
+        <http://aimicroservice.derby.ac.uk/feature/slope>,
+        <http://aimicroservice.derby.ac.uk/feature/target>,
+        <http://aimicroservice.derby.ac.uk/feature/thal>,
+        <http://aimicroservice.derby.ac.uk/feature/thalach>,
+        <http://aimicroservice.derby.ac.uk/feature/trestbps> ;
+    ns1:record_nubmer "303"@en .
+
+ns1:image ns1:data_type ns1:jpeg .
+
+ns1:text ns1:data_type ns1:txt .
+
+ns1: ns1:data_type ns1:csv .
+

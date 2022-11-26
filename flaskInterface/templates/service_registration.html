@@ -1,0 +1,165 @@
+{%extends 'index.html' %}
+{%block content %}
+{% include 'nav.html'%}
+    <div class="container relative">
+        <div class="">
+
+           <!-- <div class="row mb-12">
+                <div class="d-flex justify-content-start mb-4">
+                    <div class="p-1 mt-3">
+                    <h1 class="header_intro ">AI Microservice</h1>
+                    <p class="pt-3 text-black lh-lg">A General Purpose Intelligent System </p>                    
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="row mb-4">
+                <form method="POST" enctype="multipart/form-data" class="shadow-lg p-1 w-2/4  bg-info border border-2">
+                    {{form.hidden_tag()}}
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+
+                    {% if messages %}
+                        
+                        {% for category, message in messages %}
+
+                        <!-- <div class="fw-bolder bg-danger text-center text-white rounded py-3">
+
+                        </div> -->
+                            <div class=" text-center fw-bolder alert alert-{{category}}">
+                                
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
+                
+
+                    <h2 class="text-center text-xl text-orange-600  fw-bold text-2xl">Service Registration</h2>
+                    <p class="text-center text-xs text-grey mt-2">Proceed to register a Service</p>
+
+                    <div class="row m-4">
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Namespace.label(class='my-bold')}}
+                            {{form.Namespace(class='block w-full p-2 border-2 mt-2 form-control')}}
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Ms_name.label(class='my-bold')}}
+                            {{form.Ms_name(class='block w-full p-2 border-2 mt-2 form-control')}}
+                    
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Description.label(class='my-bold')}}
+                            {{form.Description(class='block w-full p-2 border-2 mt-2 form-control')}}            
+                        </div>
+                    </div>
+
+                    <div class="row m-4">
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Ms_type.label(class='fw-bold')}}
+                            {{form.Ms_type(class='block w-full p-2 border-2 mt-2 form-control')}}                
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Dependencies.label(class='fw-bold')}}
+                            {{form.Dependencies(class='block w-full p-2 border-2 mt-2 form-control')}}
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Framework.label(class='fw-bold')}}
+                            {{form.Framework(class='block w-full p-2 border-2 mt-2 form-control')}}
+                        </div>
+                    </div>
+
+                    <div class="row m-4">
+                        <div class="col-md-4 col-sm-6">
+                            {{form.GPU.label(class='fw-bold')}}
+                            {{form.GPU(class='block w-full p-2 border-2 mt-2 form-control')}}
+                    
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Pipeline.label(class='fw-bold')}}
+                            {{form.Pipeline(class='block w-full p-2 border-2 mt-2 form-control')}}
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Model_format.label(class='fw-bold')}}
+                            {{form.Model_format(class='block w-full p-2 border-2 mt-2 form-control')}}                
+                        </div>
+                    </div>
+
+                    <div class="row m-4">
+                        <div class="col-md-4 col-sm-6">
+                            {{form.ServiceCategory.label(class='fw-bold')}}
+                            <!-- {{form.ServiceCategory(class='block w-full p-2 border-2 mt-2 form-control')}}
+                            {{form.ServiceCategory(class='block w-full p-2 border-2 mt-2 form-control')}}  -->
+                            <!-- <input type="text" name="serv_cat" class='block w-full p-2 border-2 mt-2 form-control' placeholder="[linearRegression, ... logitstic regression, ... CNN]"> -->
+                            <select class='block w-full p-2 border-2 mt-2 form-control' name="Serv_Cat" id="ServiceCat">
+                                <option value="1">Linear Regression</option>
+                                <option value="2">Logistic Regression</option>
+                                <option value="3">Biinary Classfication</option>
+                                <option value="4">Sklearn</option>
+                                <option value="5">others</option>
+                              </select>
+                              <input type="text" id="OSC"name="otherServCat" style="display: none;" class='block w-full p-2 border-2 mt-2 form-control' placeholder="Enter service category of your choice">
+                        </div>               
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Input_sp.label(class='fw-bold')}}
+                            <!-- {{form.Input_sp(class='block w-full p-2 border-2 mt-2 form-control')}} -->
+                    
+                            <select class='block w-full p-2 border-2 mt-2 form-control' name="input_service" id="input_sp_options">
+                                <option value="1">Datafile.csv</option>
+                                <option value="2">Datafile.excel</option>
+                                <option value="3">Datafile.pdf</option>
+                                <option value="4">Image </option>
+                                <option value="5">Text</option>
+                                <option value="6">Others</option>
+        
+                              </select>
+                            <input type="text" id="ISP" name="input_sp" style="display: none;" class='block w-full p-2 border-2 mt-2 form-control' placeholder="Enter Input_sp of your choice">
+                        
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Output_sp.label(class='fw-bold')}}
+                            <!-- {{form.Output_sp(class='block w-full p-2 border-2 mt-2 form-control')}} -->
+                            <select class='block w-full p-2 border-2 mt-2 form-control' name="output_service" id="output_sp_options">
+                                <option value="1">Datafile.csv</option>
+                                <option value="2">Datafile.excel</option>
+                                <option value="3">Datafile.pdf</option>
+                                <option value="4">Image </option>
+                                <option value="5">Text</option>
+                                <option value="6">Others</option>
+        
+                                
+                              </select>
+                            <input type="text" id="OSP" name="output_sp" style="display: none;" class='block w-full p-2 border-2 mt-2 form-control' placeholder="Enter output_sp of your choice">
+                        
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="row m-4">
+                        <div class="col-md-4 col-sm-6">
+                            {{form.Contributor.label(class='fw-bold')}}
+                            {{form.Contributor(class='block w-full p-2 border-2 mt-2 form-control')}}               
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            {{form.License.label(class='fw-bold')}}
+                            {{form.License(class='block w-full p-2 border-2 mt-2 form-control')}}               
+                        </div>
+                    </div>
+                    <!-- <div class="mt-5">
+                        <button class="col-span-6 bg-orange-600 text-white btn btn-primary w-100 p-2 mt-4" >Register Services</button>
+                        <input type="reset" class="w-full bg-orange-600 text-white btn btn-secondary w-100 p-2 mt-4" ></input>
+                    </div> -->
+                    <div class="row">
+                        <div class="mt-3 flex space-between">                        
+                            
+                            {{form.submit(class='btn btn-primary fw-bolder')}}
+                            <input type="Reset" value="RESET" class="btn btn-danger fw-bolder">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/Script.js')}}"></script>
+{%endblock content%}

@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+{% include 'nav.html'%}
+      <div class="domain_layout">
+        <div class="container">
+        <!--  <div class="position-relative">
+            <img src="{{ url_for('static' , filename ='img/ai.jpg')}}" class="mx-auto d-block domain_img w-100" />
+            <div class="position-absolute w-100 mx-auto d-block top-0">
+              <h1 class="text-white text-center mt-5 pt-5 fw-bolder">Automation AI</h1>
+              <p class="text-secondary text-center fs-2 fw-bold mt-5 mx-3">Providing plenty of benefits to our day-to-day lives. In the current state of the world, and with today's existing technology</p>
+            </div>
+          </div> -->
+          
+          <section class="bg-white mx-5 domain_page">
+            <div class="pt-5 px-5">
+              <h2 class="fs-2 fw-bolder text-primary">Create Domain</h2>
+              <p class="fs-6 text-warning">Proceed to create a domain</p>
+            </div>
+
+            <div class="mt-5 bg-green  ">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+
+              {% if messages %}
+                     
+                  {% for category, message in messages %}
+
+                  <!-- <div class="fw-bolder bg-danger text-center text-white rounded py-3">
+
+                  </div> -->
+                      <div class=" text-center fw-bolder alert alert-{{category}}">
+                          
+                          {{ message }}
+                      </div>
+                  {% endfor %}
+              {% endif %}
+              {% endwith %}
+          </div>
+            <form method="POST" class="p-5">
+              {{form.hidden_tag()}}
+              <div class="mb-3">
+              
+               {{form.title.label(class='form-label fw-bolder')}}
+                {{form.title(class='form-control')}}
+              </div>
+              <div class="mb-3 mt-5">
+               
+                 {{form.description.label(class='form-label fw-bolder')}}
+                {{form.description(class='form-control')}}
+              </div>
+              <button type="submit" class="rounded mt-4 my-btn">Add domain</button>
+             
+            </form>
+          </section>
+        </div>
+      </div>
+      
+{% endblock content %}

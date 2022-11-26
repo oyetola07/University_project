@@ -1,0 +1,58 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:119aecef-62b5-499c-ab68-f19f5acf7c9c ns1:context ns1:7168f2a5-e5e3-4314-8feb-35ea3d2809df .
+
+ns1:3c9e7194-3511-4235-8076-5758a8cd6953 ns1:context ns1:56105583-185c-4b49-87c7-23588fcb86e4 .
+
+ns1:dd7be769-9a4e-4f4f-9358-c99f8f1dc184 ns1:context ns1:b0969356-79a1-4ea5-aa7d-1dd5606a08d6 .
+
+ns1:eb3e0fdb-5e7e-44cb-8a83-13400105ccd6 ns1:context ns1:845141ef-80c9-4f84-84ab-d2c7914df071 .
+
+ns1:07695009-ef75-4bd5-9bc2-2dc9b936b968 ns1:reward "1"@en ;
+    ns1:s_iloc "KGLayer/models/051edcae-6f60-4f01-ba21-0f7dca12a23b.gz"@en .
+
+ns1:56105583-185c-4b49-87c7-23588fcb86e4 ns1:policy_state "1"@en ;
+    ns1:solution ns1:07695009-ef75-4bd5-9bc2-2dc9b936b968 ;
+    ns1:workflow [ ns1:wf_ims [ ns1:reward "0.0625"@en ;
+                    ns1:wf_id "3"@en ;
+                    ns1:wf_iloc "featuremodelevaluation"@en ],
+                [ ns1:reward "0.1875"@en ;
+                    ns1:wf_id "1"@en ;
+                    ns1:wf_iloc "spliting"@en ],
+                [ ns1:reward "0.25"@en ;
+                    ns1:wf_id "0"@en ;
+                    ns1:wf_iloc "loadnormalpddata"@en ],
+                [ ns1:reward "0.125"@en ;
+                    ns1:wf_id "2"@en ;
+                    ns1:wf_iloc "pipelinemodels"@en ] ] .
+
+ns1:5b1b1c67-0bae-4993-92aa-4f397e42c443 ns1:reward "0.4"@en ;
+    ns1:s_iloc "text_generation_pipeline.py"@en .
+
+ns1:6ae00150-bc45-4981-8753-ffffa77e6ba3 ns1:reward "0.7"@en ;
+    ns1:s_iloc "text_generation_pipeline.py"@en .
+
+ns1:7168f2a5-e5e3-4314-8feb-35ea3d2809df ns1:policy_state "0.7"@en ;
+    ns1:solution ns1:6ae00150-bc45-4981-8753-ffffa77e6ba3 ;
+    ns1:workflow [ ns1:wf_ims [ ns1:reward "0.35"@en ;
+                    ns1:wf_id "0"@en ;
+                    ns1:wf_iloc "image_classification_transformer"@en ],
+                [ ns1:reward "0.175"@en ;
+                    ns1:wf_id "1"@en ;
+                    ns1:wf_iloc "text_generation_pipeline"@en ] ] .
+
+ns1:80b2765e-5c85-4776-a4e3-c558021a8343 ns1:reward "0.6"@en ;
+    ns1:s_iloc "text_generation_pipeline.py"@en .
+
+ns1:845141ef-80c9-4f84-84ab-d2c7914df071 ns1:policy_state "0.6"@en ;
+    ns1:solution ns1:80b2765e-5c85-4776-a4e3-c558021a8343 ;
+    ns1:workflow [ ns1:wf_ims [ ns1:reward "0.6"@en ;
+                    ns1:wf_id "0"@en ;
+                    ns1:wf_iloc "text_generation_pipeline"@en ] ] .
+
+ns1:b0969356-79a1-4ea5-aa7d-1dd5606a08d6 ns1:policy_state "0.4"@en ;
+    ns1:solution ns1:5b1b1c67-0bae-4993-92aa-4f397e42c443 ;
+    ns1:workflow [ ns1:wf_ims [ ns1:reward "0.4"@en ;
+                    ns1:wf_id "0"@en ;
+                    ns1:wf_iloc "text_generation_pipeline"@en ] ] .
+
